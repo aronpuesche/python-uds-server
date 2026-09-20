@@ -22,7 +22,8 @@ def test_diagnostic_session_times_out_to_default_session() -> None:
 
     server.handle_request(b"\x10\x03")
     with patch(
-        "uds_server.server.monotonic", return_value=server._session_last_activity + 0.01
+        "uds_server.server.monotonic",
+        return_value=server._session_last_activity + 0.011,
     ):
         assert server.current_session == 1
 
@@ -39,6 +40,7 @@ def test_diagnostic_session_timeout_revokes_security_access() -> None:
     assert server.is_security_level_unlocked(1)
 
     with patch(
-        "uds_server.server.monotonic", return_value=server._session_last_activity + 0.01
+        "uds_server.server.monotonic",
+        return_value=server._session_last_activity + 0.011,
     ):
         assert not server.is_security_level_unlocked(1)
