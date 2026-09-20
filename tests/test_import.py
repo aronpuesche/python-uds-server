@@ -1,6 +1,10 @@
 """Smoke tests for the public package API."""
 
+import pytest
+
 from uds_server import UdsServer
+
+pytestmark = pytest.mark.unit
 
 
 def test_public_server_can_be_imported_and_started() -> None:
