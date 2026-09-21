@@ -3,6 +3,8 @@
 A configurable UDS (ISO 14229) server for testing Python diagnostic clients
 without physical ECU hardware.
 
+[![Documentation Status](https://readthedocs.org/projects/python-uds-server/badge/?version=stable)](https://python-uds-server.readthedocs.io/en/stable/)
+
 `python-uds-server` uses `can-isotp` and `python-can` as its transport basis.
 Implemented UDS services: DiagnosticSessionControl (`0x10`), ECUReset (`0x11`),
 ClearDiagnosticInformation (`0x14`), ReadDTCInformation (`0x19`),
@@ -13,8 +15,9 @@ ReadMemoryByAddress (`0x23`), WriteMemoryByAddress (`0x3D`), RequestDownload
 (`0x34`), RequestUpload (`0x35`), TransferData (`0x36`), RequestTransferExit
 (`0x37`), RequestFileTransfer (`0x38`) and TesterPresent (`0x3E`).
 
-The full documentation is built with Sphinx and configured for Read the Docs;
-see [`docs/`](docs/index.rst) for a local build.
+Read the full documentation at
+[python-uds-server.readthedocs.io](https://python-uds-server.readthedocs.io/en/stable/).
+For a local build, see [`docs/`](docs/index.rst).
 Release notes are maintained in [CHANGELOG.md](CHANGELOG.md).
 Publishing is automated for version tags (`v*`) through GitHub Actions and
 PyPI Trusted Publishing.

@@ -42,6 +42,7 @@ test = [
 ]
 docs = [
   "sphinx>=7.0",
+  "sphinx-rtd-theme>=3.0",
 ]
 
 [project.urls]
