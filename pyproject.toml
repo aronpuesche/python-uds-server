@@ -1,0 +1,62 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/uds_server"]
+
+[project]
+name = "python-uds-server"
+version = "0.1.0"
+description = "A configurable UDS (ISO 14229) server for testing diagnostic clients."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+  { name = "aronpuesche" },
+]
+classifiers = [
+  "Development Status :: 2 - Pre-Alpha",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Software Development :: Testing",
+]
+keywords = ["automotive", "diagnostics", "iso-14229", "testing", "uds"]
+dependencies = [
+  "can-isotp>=2.0",
+  "python-can>=4.0",
+]
+
+[project.optional-dependencies]
+test = [
+  "black>=24.0",
+  "pre-commit>=4.0",
+  "pytest>=8.0",
+  "udsoncan>=1.26",
+]
+docs = [
+  "sphinx>=7.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/aronpuesche/python-uds-server"
+Repository = "https://github.com/aronpuesche/python-uds-server"
+Issues = "https://github.com/aronpuesche/python-uds-server/issues"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = ["-ra"]
+markers = [
+  "unit: fast tests without external protocol stacks",
+  "integration: end-to-end tests using virtual CAN and ISO-TP",
+]
+
+[tool.black]
+line-length = 88
+target-version = ["py310"]

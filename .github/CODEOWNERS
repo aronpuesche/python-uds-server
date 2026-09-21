@@ -1,0 +1,5 @@
+# aronpuesche reviews every change before it is merged to a protected branch.
+* @aronpuesche
+
+# Keep ownership rules themselves explicitly protected.
+/.github/CODEOWNERS @aronpuesche
